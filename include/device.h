@@ -9,8 +9,8 @@ protected:
     vector<Device *> iPins;
     bool output;                   // 紀錄output的bool結果
     bool output_connected = false; // 紀錄output是否有連到其他gate
-    int type;                      // （Unused）裝置類型 0:iPin, 1:AND gate, 2:OR gate, 3:Not gate, 4:oPin.
-    int name;                      // 編號
+    // int type;                      // （Unused）裝置類型 0:iPin, 1:AND gate, 2:OR gate, 3:Not gate, 4:oPin.
+    int name;                      // Device編號
 
 public:
     //紀錄output已連接其他裝置
@@ -34,7 +34,7 @@ class iPin : public Device
 public:
     iPin(int n)
     {
-        type = 0;
+        // type = 0;
         name = n;
     }
     bool getOutput();
@@ -46,7 +46,7 @@ class oPin : public Device
 public:
     oPin(int n)
     {
-        type = 4;
+        // type = 4;
         name = n;
     }
     bool getOutput();
@@ -57,7 +57,7 @@ class gateNot : public Device
 public:
     gateNot(int n)
     {
-        type = 3;
+        // type = 3;
         name = n;
     }
     bool getOutput();
@@ -68,7 +68,7 @@ class gateOR : public Device
 public:
     gateOR(int n)
     {
-        type = 2;
+        // type = 2;
         name = n;
     }
     bool getOutput();
@@ -79,7 +79,7 @@ class gateAND : public Device
 public:
     gateAND(int n)
     {
-        type = 1;
+        // type = 1;
         name = n;
     }
     bool getOutput();
