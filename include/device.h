@@ -37,14 +37,8 @@ public:
         type = 0;
         name = n;
     }
-    bool getOutput()
-    {
-        return output;
-    }
-    void setOutput(bool out)
-    {
-        output = out;
-    }
+    bool getOutput();
+    void setOutput(bool out);
 };
 
 class oPin : public Device
@@ -55,11 +49,7 @@ public:
         type = 4;
         name = n;
     }
-    bool getOutput()
-    {
-        output = iPins[0]->getOutput();
-        return output;
-    }
+    bool getOutput();
 };
 
 class gateNot : public Device
@@ -70,11 +60,7 @@ public:
         type = 3;
         name = n;
     }
-    bool getOutput()
-    {
-        output = iPins[0]->getOutput() == 0 ? 1 : 0;
-        return output;
-    }
+    bool getOutput();
 };
 
 class gateOR : public Device
@@ -85,14 +71,7 @@ public:
         type = 2;
         name = n;
     }
-    bool getOutput()
-    {
-        bool ans = false;
-        for (auto d : iPins)
-            ans = ans || d->getOutput();
-        output = ans;
-        return output;
-    }
+    bool getOutput();
 };
 
 class gateAND : public Device
@@ -103,12 +82,5 @@ public:
         type = 1;
         name = n;
     }
-    bool getOutput()
-    {
-        bool ans = true;
-        for (auto d : iPins)
-            ans = ans * d->getOutput();
-        output = ans;
-        return output;
-    }
+    bool getOutput();
 };
