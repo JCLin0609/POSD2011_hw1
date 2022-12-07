@@ -1,3 +1,6 @@
+#ifndef TEXTUI_H_INCLUDED
+#define TEXTUI_H_INCLUDED
+
 #include <iostream>
 #include "LogicSimulator.h"
 using namespace std;
@@ -16,3 +19,5 @@ public:
     void displayMenu();
     void processCommand();
 };
+
+#endif

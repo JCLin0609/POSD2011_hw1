@@ -1,3 +1,6 @@
+#ifndef LOGICSIM_H_INCLUDED
+#define LOGICSIM_H_INCLUDED
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,3 +23,5 @@ public:
     //回傳Output（oPins）數量
     int Get_output_num() { return oPins.size(); };
 };
+
+#endif

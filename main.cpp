@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 #include "include/TextUI.h"
+using namespace std;
 
 int main()
 {
@@ -11,3 +11,5 @@ int main()
     }
     return 0;
 }
+
+

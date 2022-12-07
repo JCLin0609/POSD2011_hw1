@@ -1,3 +1,6 @@
+#ifndef DEVICE_H_INCLUDED
+#define DEVICE_H_INCLUDED
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -32,10 +35,10 @@ public:
 class iPin : public Device
 {
 public:
-    iPin(int n)
+    iPin(int _name)
     {
         // type = 0;
-        name = n;
+        name = _name;
     }
     bool getOutput();
     void setOutput(bool out);
@@ -84,3 +87,5 @@ public:
     }
     bool getOutput();
 };
+
+#endif 
