@@ -1,7 +1,9 @@
 #include "include/TextUI.h"
 #include <stack>
+int const TERMINAL_EXIT = 9;
+int const TERMINAL_HELP = 8;
 
-// Command輸入為1 
+// Command輸入為1
 void Load_function(LogicSim *object, bool *file_load)
 {
     string path;
@@ -37,7 +39,13 @@ void Simulation(LogicSim *object, bool *file_load)
         int key;
         cout << "Please key in the value of input pin " << i + 1 << ": ";
         cin >> key;
-        if (key != 0 && key != 1)
+        if (cin.fail())
+        {
+            cout << "The value of input pin must be 0/1" << endl;
+            cin.clear();
+            cin.get();
+        }
+        else if (key != 0 && key != 1)
             cout << "The value of input pin must be 0/1" << endl;
         else
         {
@@ -138,7 +146,7 @@ void Display_truth_table(LogicSim *object, bool *file_load)
             Bvalue.push(r);
             pos--;
         }
-        while (pos >= 0)    
+        while (pos >= 0)
         {
             Bvalue.push(0);
             pos--;
@@ -171,9 +179,19 @@ void TextUI::displayMenu()
 void TextUI::processCommand()
 {
     int command;
+
     cout << "Command: ";
     cin >> command;
+    if (cin.fail())
+    {
+        cout << endl
+             << "Please enter only interger" << endl;
+        cin.clear();
+        cin.get();
+        return;
+    }
     cout << endl;
+
     switch (command)
     {
     case 1:
