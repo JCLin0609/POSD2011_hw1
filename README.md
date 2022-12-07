@@ -1,3 +1,5 @@
 make
 
-./hw1
+./hw1_test
+
+./hw1_UI
